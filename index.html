@@ -27,26 +27,26 @@
     }
 
     html, body {
-    height: 100%;
-    /* overflow: hidden;  <-- remova esta linha para permitir rolagem */
-    font-family: 'Lora', Georgia, serif;
-    background: var(--pink-light);
-    color: var(--text-dark);
-    -webkit-tap-highlight-color: transparent;
-    -webkit-user-select: none;
-    user-select: none;
+      min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+      font-family: 'Lora', Georgia, serif;
+      background: var(--pink-light);
+      color: var(--text-dark);
+      -webkit-tap-highlight-color: transparent;
+      -webkit-user-select: none;
+      user-select: none;
     }
 
     body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* height: 100dvh;  <-- pode ser removido para permitir altura natural de conteúdo */
-    height: auto;
-    position: relative;
-    overflow: hidden;
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100dvh;
+  position: relative;
+  overflow-x: hidden;
+}
 
 
     /* ─── Background hearts canvas ─── */
@@ -58,6 +58,9 @@
       z-index: 0;
       pointer-events: none;
     }
+    section {
+  min-height: 100vh;
+}
 
     /* ─── Main content wrapper ─── */
     .content {
@@ -66,8 +69,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      height: 100dvh;
+        justify-content: flex-start;
+  gap: 24px;
+    min-height: 100dvh;
       width: 100%;
       max-width: 480px;
       padding: 6vh 24px 4vh;
